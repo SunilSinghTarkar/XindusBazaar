@@ -1,7 +1,10 @@
 # E-Commerce App (XindusBazaar)
 XindusBazaar: Your go-to shopping app for effortless and enjoyable online shopping experiences!
 
+               
+<h2 align="center">Overview </h2>
 
+This documentation provides a comprehensive guide for setting up, running, testing, and understanding the backend functionality of the Wishlist Management feature in the e-commerce platform. 
 ### Project Details
 
 - Project Name: XindusBazaar
