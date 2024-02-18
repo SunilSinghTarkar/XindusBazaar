@@ -1,7 +1,9 @@
 # E-Commerce App (XindusBazaar)
 XindusBazaar: Your go-to shopping app for effortless and enjoyable online shopping experiences!
 
-               
+                   
+<h1 align="center">
+Wishlist Management Backend Application Documentation </h1>
 <h2 align="center">Overview </h2>
 
 This documentation provides a comprehensive guide for setting up, running, testing, and understanding the backend functionality of the Wishlist Management feature in the e-commerce platform. 
@@ -65,17 +67,22 @@ spring:
 
 ## API Endpoints
 <b>Localhost:</b>  http://localhost:8080
+<br>
 <b>Deployed:</b>   https://xindusbazaar-production.up.railway.app
 
 ```
 Endpoints for WishList management.
 .GET /api/wishlists/{wishListId}: Retrieve a user's WishList.  (Authentication required)
+
 .POST /api/wishlists/{wishListId}/{itemId}: Adding a new item to WishList. (Authentication required)
+
 .DELETE /api/wishlists/{wishListId}/{itemId}: Remove a wishlist item by ID. (Authentication required)
 
 Endpoints for Users management.
 .GET /api/users/{userId}: Retrieve a user.
+
 .GET /api/signIn: Registered Users can logIn to their accounts. (Without Authentication allowed)
+
 .POST /api/registers: Registering a new User to the Database.   (Without Authentication allowed)
 ex:
 { 
@@ -84,9 +91,12 @@ ex:
   "password":"1234"
 }
 
+
 Endpoints for Items management.
 .GET /api/items/{itemId}: Retrieve the item. (Authentication required)
+
 .GET /api/items: Retrieve the itemList. (Authentication required)
+
 .POST /api/items: Create a new Item.  (Authentication required)
  ex:
 { 
