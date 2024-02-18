@@ -8,7 +8,7 @@ This documentation provides a comprehensive guide for setting up, running, testi
 ### Project Details
 
 - Project Name: XindusBazaar
-- Project URL: 
+- Project URL: https://xindusbazaar-production.up.railway.app
 - GitHub Repository: https://github.com/SunilSinghTarkar/XindusBazaar
   
  <h2 align="center">Features </h2>
@@ -49,10 +49,8 @@ Start using the application and add Items to WishList.
 
 Before running the API server, please follow these steps:
 
-1. Update the database configuration inside the `application.yml` file located in your project:
+1. Update the database configuration inside the `application-dev.yml` file located in your project:
  ```yaml
-server:
-  port: 8080
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -68,14 +66,14 @@ spring:
 ## API Endpoints
 ```
 Endpoints for WishList management.
-.GET /api/wishlists/{wishListId}: Retrieve a user's WishList.
-.POST /api/wishlists/{wishListId}/{itemId}: Adding a new item to WishList.
-.DELETE /api/wishlists/{wishListId}/{itemId}: Remove a wishlist item by ID.
+.GET /api/wishlists/{wishListId}: Retrieve a user's WishList.  (Authentication required)
+.POST /api/wishlists/{wishListId}/{itemId}: Adding a new item to WishList. (Authentication required)
+.DELETE /api/wishlists/{wishListId}/{itemId}: Remove a wishlist item by ID. (Authentication required)
 
 Endpoints for Users management.
 .GET /api/users/{userId}: Retrieve a user.
-.GET /api/signIn: Registered Users can logIn to their accounts.
-.POST /api/registers: Registering a new User to the Database.
+.GET /api/signIn: Registered Users can logIn to their accounts. (Without Authentication allowed)
+.POST /api/registers: Registering a new User to the Database.   (Without Authentication allowed)
 ex:
 { 
   "userName":"Sunil",
@@ -84,9 +82,9 @@ ex:
 }
 
 Endpoints for Items management.
-.GET /api/items/{itemId}: Retrieve the item.
-.GET /api/items: Retrieve the itemList.
-.POST /api/items: Create a new Item.
+.GET /api/items/{itemId}: Retrieve the item. (Authentication required)
+.GET /api/items: Retrieve the itemList. (Authentication required)
+.POST /api/items: Create a new Item.  (Authentication required)
  ex:
 { 
   "itemName":"Item01",
