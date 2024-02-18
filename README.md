@@ -64,6 +64,9 @@ spring:
 ```
 
 ## API Endpoints
+<b>Localhost:</b>  http://localhost:8080
+<b>Deployed:</b>   https://xindusbazaar-production.up.railway.app
+
 ```
 Endpoints for WishList management.
 .GET /api/wishlists/{wishListId}: Retrieve a user's WishList.  (Authentication required)
