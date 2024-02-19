@@ -1,11 +1,12 @@
 package com.Xindus.service;
 
+import com.Xindus.model.Items;
 import com.Xindus.model.WishLists;
 
 public interface WishListService {
-	public WishLists getWishList(Integer wishListId);
+	public WishLists getWishList();
 
-	public WishLists addToWishList(Integer wishListId, Integer itemId);
+	public WishLists addToWishList(Items item);
 
-	public WishLists removeFromWishList(Integer wishListId, Integer itemId);
+	public WishLists removeFromWishList(Integer itemId);
 }

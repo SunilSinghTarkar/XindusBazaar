@@ -46,24 +46,6 @@ public class UserServiceTesting {
 
 	}
 
-	@Test
-	public void getUserById() {
-		int userId = 1;
-		Users expectedUser = new Users(1, "Sunil", "sunil01@gmail.com", "1234");
-
-		when(ur.findById(userId)).thenReturn(java.util.Optional.of(expectedUser));
-
-		Users actualUser = userService.getUserById(userId);
-
-		assertNotNull(actualUser);
-		assertEquals(expectedUser, actualUser);
-
-		 // Log statements for debugging
-        log.info("Expected User by ID: ", userId, expectedUser);
-        log.info("Actual User by ID: ", userId, actualUser);
-        
-		verify(ur, times(1)).findById(userId);
-	}
 
 	@Test
 	public void getUserByEmail() {

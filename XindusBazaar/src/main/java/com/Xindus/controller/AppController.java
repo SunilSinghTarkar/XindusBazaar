@@ -46,15 +46,6 @@ public class AppController {
 		return new ResponseEntity<Users>(savedUser, HttpStatus.CREATED);
 	}
 
-	// Method for Fetching User with userId.
-	@GetMapping("/users/{userId}")
-	public ResponseEntity<Users> getUser(@PathVariable Integer userId) {
-		log.info("Inside getUser method of AppController.");
-		log.info("Received request to fetch user with ID: ", userId);
-		Users user = userService.getUserById(userId);
-		log.info("User retrieved successfully. User ID: ", userId);
-		return new ResponseEntity<Users>(user, HttpStatus.ACCEPTED);
-	}
 
 	// Method for Creating Item.
 	@PostMapping("/items")
@@ -93,8 +84,6 @@ public class AppController {
 
 	@GetMapping("/signIn")
 	public ResponseEntity<Users> getCustomerByEmail(Authentication auth) {
-
-		System.out.println(auth);
 
 		Users user = userService.getUserByEmail(auth.getName());
 

@@ -1,8 +1,6 @@
 package com.Xindus.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -15,64 +13,62 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.Xindus.controller.WishListController;
+import com.Xindus.model.Items;
 import com.Xindus.model.WishLists;
 import com.Xindus.service.WishListService;
+
 @ExtendWith(MockitoExtension.class)
 public class WishListControllerTesting {
 
-	@Mock
-	private WishListService wishListService;
+    @Mock
+    private WishListService wishListService;
 
-	@InjectMocks
-	private WishListController wishListController = new WishListController();
+    @InjectMocks
+    private WishListController wishListController = new WishListController(); // Pass the mock service
 
-	@Test
-	public void testGetWishList() {
+    @Test
+    public void testGetWishList() {
+        int wishListId = 1;
+        WishLists expectedWishList = new WishLists(wishListId, new ArrayList<>());
 
-		int wishListId = 1;
-		WishLists expectedWishList = new WishLists(wishListId, new ArrayList<>());
+        when(wishListService.getWishList()).thenReturn(expectedWishList);
 
-		when(wishListService.getWishList(wishListId)).thenReturn(expectedWishList);
+        ResponseEntity<WishLists> responseEntity = wishListController.getWishList();
 
-		ResponseEntity<WishLists> responseEntity = wishListController.getWishList(wishListId);
+        // Assert
+        assertEquals(HttpStatus.ACCEPTED, responseEntity.getStatusCode());
+        assertEquals(expectedWishList, responseEntity.getBody());
+    }
 
-		// Assert
-		assertEquals(HttpStatus.ACCEPTED, responseEntity.getStatusCode());
-		assertEquals(expectedWishList, responseEntity.getBody());
-	}
+    @Test
+    public void testAddWishListItem() {
+        int wishListId = 1;
+        int itemId = 2;
+        Items item = new Items(1, "item01", "Fashion", 120);
+        WishLists expectedWishList = new WishLists(wishListId, new ArrayList<>());
 
-	@Test
-	public void testAddWishListItem() {
+        when(wishListService.addToWishList(item)).thenReturn(expectedWishList);
 
-		int wishListId = 1;
-		int itemId = 2;
-		WishLists expectedWishList = new WishLists(wishListId, new ArrayList<>());
+        ResponseEntity<WishLists> responseEntity = wishListController.addWishListItem(item);
 
-		when(wishListService.addToWishList(wishListId, itemId)).thenReturn(expectedWishList);
+        // Assert
+        assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
+        assertEquals(expectedWishList, responseEntity.getBody());
+    }
 
-		ResponseEntity<WishLists> responseEntity = wishListController.addWishListItem(wishListId, itemId);
+    @Test
+    public void testDeleteWishListItem() {
+        int wishListId = 1;
+        int itemId = 2;
+        WishLists expectedWishList = new WishLists(wishListId, new ArrayList<>());
 
-		// Assert
-		assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
-		assertEquals(expectedWishList, responseEntity.getBody());
-	}
+        when(wishListService.removeFromWishList(itemId)).thenReturn(expectedWishList);
 
-	@Test
-	public void testDeleteWishListItem() {
+        ResponseEntity<WishLists> responseEntity = wishListController.deleteWishListItem(itemId);
 
-		int wishListId = 1;
-		int itemId = 2;
-		WishLists expectedWishList = new WishLists(wishListId, new ArrayList<>());
+        // Assert
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertEquals(expectedWishList, responseEntity.getBody());
+    }
 
-		when(wishListService.removeFromWishList(wishListId, itemId)).thenReturn(expectedWishList);
-
-		ResponseEntity<WishLists> responseEntity = wishListController.deleteWishListItem(wishListId, itemId);
-
-		// Assert
-		assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-		assertEquals(expectedWishList, responseEntity.getBody());
-	}
-
-	
 }

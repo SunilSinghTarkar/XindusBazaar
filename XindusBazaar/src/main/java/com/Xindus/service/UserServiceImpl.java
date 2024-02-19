@@ -30,17 +30,17 @@ public class UserServiceImpl implements UserService {
 		return savedUser;
 	}
 
-	@Override
-	public Users getUserById(Integer userId) {
-		log.info("Fetching user with ID: ", userId);
-
-		// Fetching user from the database by ID
-		Users user = userRepo.findById(userId)
-				.orElseThrow(() -> new NotFoundException("Users not found with given userId " + userId));
-
-		log.info("User fetched successfully. User ID: ", userId);
-		return user;
-	}
+//	@Override
+//	public Users getUserById(Integer userId) {
+//		log.info("Fetching user with ID: ", userId);
+//
+//		// Fetching user from the database by ID
+//		Users user = userRepo.findById(userId)
+//				.orElseThrow(() -> new NotFoundException("Users not found with given userId " + userId));
+//
+//		log.info("User fetched successfully. User ID: ", userId);
+//		return user;
+//	}
 
 	@Override
 	public Users getUserByEmail(String name) {
