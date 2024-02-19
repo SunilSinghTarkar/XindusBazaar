@@ -11,7 +11,7 @@ This documentation provides a comprehensive guide for setting up, running, testi
 
 - Project Name: XindusBazaar
 - Backend URL: https://xindusbazaar-production.up.railway.app
-- Frontend URL:https://xindusbazaar.netlify.app/
+- Frontend URL:https://xindusbazaar-sunil.netlify.app/
 - GitHub Repository: https://github.com/SunilSinghTarkar/XindusBazaar
   
  <h2 align="center">Features </h2>
@@ -31,7 +31,7 @@ Login: Registered Users can logIn to their accounts securely using Spring Securi
 
 Backend: Java, Spring Boot, Spring Security, JPA
 <br>
-Frontend: Html, Css ,JavaScript ( Frontend URL:https://xindusbazaar.netlify.app/)
+Frontend: Html, Css ,JavaScript ( Frontend URL:https://xindusbazaar-sunil.netlify.app/)
 
 
 <b>Database:</b> MySQL
