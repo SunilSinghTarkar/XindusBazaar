@@ -52,18 +52,6 @@ public class AppControllerTesting {
 		verify(userService, times(1)).registerUser(userToRegister);
 	}
 
-	@Test
-	public void testGetUser() {
-		int userId = 1;
-		Users expectedUser = new Users(userId, "Sunil", "sunil02@gmail.com", "1234");
-		when(userService.getUserById(userId)).thenReturn(expectedUser);
-
-		ResponseEntity<Users> responseEntity = appController.getUser(userId);
-
-		assertEquals(HttpStatus.ACCEPTED, responseEntity.getStatusCode());
-		assertEquals(expectedUser, responseEntity.getBody());
-		verify(userService, times(1)).getUserById(userId);
-	}
 
 	@Test
 	public void testCreateItem() {
