@@ -76,11 +76,11 @@ spring:
 
 ```
 Endpoints for WishList management.
-.GET /api/wishlists/{wishListId}: Retrieve a user's WishList.  (Authentication required)
+.GET /api/wishlists: Retrieve a user's WishList.  (Authentication required)
 
-.POST /api/wishlists/{wishListId}/{itemId}: Adding a new item to WishList. (Authentication required)
+.POST /api/wishlists: Adding a new item to WishList. (Authentication required) Note: item obj required to pass.
 
-.DELETE /api/wishlists/{wishListId}/{itemId}: Remove a wishlist item by ID. (Authentication required)
+.DELETE /api/wishlists/{Id}: Remove a wishlist item by ID. (Authentication required)
 
 Endpoints for Users management.
 .GET /api/users/{userId}: Retrieve a user.
