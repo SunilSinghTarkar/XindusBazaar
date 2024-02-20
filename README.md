@@ -56,7 +56,7 @@ Start using the application and add Items to WishList.
 Before running the API server, please follow these steps:
 
 1. Update the database configuration inside the `application-dev.yml` file located in your project:
- ```yaml
+ ```
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -74,17 +74,19 @@ spring:
 <br>
 <b>Deployed:</b>   https://xindusbazaar-production.up.railway.app
 
-```
-Endpoints for WishList management.
+<h3>Endpoints for WishList management.</h3> 
+
+ ```
 .GET /api/wishlists: Retrieve a user's WishList.  (Authentication required)
 
 .POST /api/wishlists: Adding a new item to WishList. (Authentication required) Note: item obj required to pass.
 
 .DELETE /api/wishlists/{Id}: Remove a wishlist item by ID. (Authentication required)
+```
 
-Endpoints for Users management.
-.GET /api/users/{userId}: Retrieve a user.
+<h3>Endpoints for Users management.</h3>
 
+ ```
 .GET /api/signIn: Registered Users can logIn to their accounts. (Without Authentication allowed)
 
 .POST /api/registers: Registering a new User to the Database.   (Without Authentication allowed)
@@ -94,9 +96,10 @@ ex:
   "email":"sunil@gmail.com",
   "password":"1234"
 }
+```
+<h3>Endpoints for Items management.</h3>
 
-
-Endpoints for Items management.
+```
 .GET /api/items/{itemId}: Retrieve the item. (Authentication required)
 
 .GET /api/items: Retrieve the itemList. (Authentication required)
@@ -108,11 +111,9 @@ Endpoints for Items management.
   "category":"Fashion",
   "price":120.20
 }
-
 ```
-
 ##Note 
-Upon successful registration or login, users will receive a user object containing essential details such as userId and wishList.
+Upon successful registration or login, users will receive a user object.
 
 <H3>Database architecture</H3>
 
