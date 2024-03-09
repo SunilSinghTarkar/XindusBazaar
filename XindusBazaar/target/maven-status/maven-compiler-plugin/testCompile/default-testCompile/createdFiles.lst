@@ -1,0 +1,9 @@
+com\Xindus\XindusBazaarApplicationTests.class
+com\Xindus\controller\AppControllerTesting.class
+com\Xindus\repository\UserRepositoryTesting.class
+com\Xindus\service\UserServiceTesting.class
+com\Xindus\controller\WishListControllerTesting.class
+com\Xindus\repository\WishListRepositoryTesting.class
+com\Xindus\repository\ItemsRepsitoryTesting.class
+com\Xindus\service\ItemServiceTesting.class
+com\Xindus\service\WishListServiceTesting.class
