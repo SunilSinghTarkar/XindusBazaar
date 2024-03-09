@@ -10,7 +10,7 @@ This documentation provides a comprehensive guide for setting up, running, testi
 ### Project Details
 
 - Project Name: XindusBazaar
-- Backend URL: https://xindusbazaar-production.up.railway.app
+- Backend URL: https://xindusbazaar-1.onrender.com/swagger-ui/index.html
 - Frontend URL:https://xindusbazaar-sunil.netlify.app/
 - GitHub Repository: https://github.com/SunilSinghTarkar/XindusBazaar
   
